@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint SQDevKit.podspec' to ensure this is a
+# Be sure to run `pod lib lint SQDifferenceKit.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -9,49 +9,21 @@
 Pod::Spec.new do |s|
 
     s.platform = :ios
-    s.ios.deployment_target = '10.0'
-    s.name = "SQDevKit"
-    s.summary = "Toolkit for iOS developers by Sequenia"
+    s.ios.deployment_target = '9.0'
+    s.name = "SQDifferenceKit"
+    s.summary = "Base data to implementig as UITableCell/UICollectionView\'s data."
     s.requires_arc = true
 
-    s.version = "1.0.3"
+    s.version = "1.0.1"
     s.license  = { :type => "MIT", :file => "LICENSE" }
-    s.author   = { 'lab-devoloper' => 'vitaly.banik@sequenia.com' }
-    s.homepage = "https://github.com/sequenia/SQDevKit"
-    s.source = { :git => 'https://github.com/sequenia/SQDevKit', 
-                 :tag => "#{s.version}" }
+    s.author   = { 'lab-devoloper' => 'ivan.michaylovsky@sequenia.com' }
+    s.homepage         = "https://github.com/sequenia/SQDifferenceKit"
+    s.source           = { :git => 'https://github.com/sequenia/SQDifferenceKit.git', 
+                           :tag => "#{s.version}" }
 
-    s.dependency 'SQDifferenceKit', '~> 1.0.1'
-    s.dependency 'SwiftyJSON', '~> 5.0.1'
-
-    s.subspec 'SQExtensions' do |extensions|
-        extensions.source_files = 'Extensions/**/*.swift'
-        extensions.dependency 'SwiftyJSON', '~> 5.0.1'
-    end
-
-    s.subspec 'SQLists' do |lists|
-        lists.source_files = 'Lists/**/*.swift'
-        lists.dependency 'SQDifferenceKit', '~> 1.0.1'
-    end
-
-    s.subspec 'SQVUPER' do |vuper|
-        vuper.source_files = 'VUPER/**/*.swift'
-        vuper.dependency 'SQDevKit/SQExtensions'
-    end
-
-    s.subspec 'SQOperations' do |operations|
-        operations.source_files = 'Operations/**/*.swift'
-        operations.dependency 'SQDevKit/SQExtensions'
-    end
-
-    s.subspec 'SQUIKit' do |uikit|
-        uikit.source_files = 'Operations/**/*.swift'
-        uikit.dependency 'SQDevKit/SQExtensions'
-        uikit.dependency 'SQDevKit/SQLists'
-        uikit.dependency 'SQDifferenceKit', '~> 1.0.1'
-    end
-
-    s.swift_version = "5.0"
+    s.framework = "UIKit"
+    s.dependency 'DifferenceKit', '~> 1.2.0'
+    s.swift_version = "4.2"
 
     s.source_files = "Sources/**/*.{swift}"
 
