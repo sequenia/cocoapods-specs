@@ -25,30 +25,30 @@ Pod::Spec.new do |s|
     s.dependency 'SwiftyJSON', '~> 5.0.1'
 
     s.subspec 'SQExtensions' do |extensions|
-        core.source_files = 'Extensions/**/*.swift'
-        core.dependency 'SwiftyJSON', '~> 5.0.1'
+        extensions.source_files = 'Extensions/**/*.swift'
+        extensions.dependency 'SwiftyJSON', '~> 5.0.1'
     end
 
     s.subspec 'SQLists' do |lists|
-        core.source_files = 'Lists/**/*.swift'
-        core.dependency 'SQDifferenceKit', '~> 1.0.1'
+        lists.source_files = 'Lists/**/*.swift'
+        lists.dependency 'SQDifferenceKit', '~> 1.0.1'
     end
 
     s.subspec 'SQVUPER' do |vuper|
-        core.source_files = 'VUPER/**/*.swift'
-        core.dependency 'SQDevKit/SQExtensions'
+        vuper.source_files = 'VUPER/**/*.swift'
+        vuper.dependency 'SQDevKit/SQExtensions'
     end
 
     s.subspec 'SQOperations' do |operations|
-        core.source_files = 'Operations/**/*.swift'
-        core.dependency 'SQDevKit/SQExtensions'
+        operations.source_files = 'Operations/**/*.swift'
+        operations.dependency 'SQDevKit/SQExtensions'
     end
 
     s.subspec 'SQUIKit' do |uikit|
-        core.source_files = 'Operations/**/*.swift'
-        core.dependency 'SQDevKit/SQExtensions'
-        core.dependency 'SQDevKit/SQLists'
-        core.dependency 'SQDifferenceKit', '~> 1.0.1'
+        uikit.source_files = 'Operations/**/*.swift'
+        uikit.dependency 'SQDevKit/SQExtensions'
+        uikit.dependency 'SQDevKit/SQLists'
+        uikit.dependency 'SQDifferenceKit', '~> 1.0.1'
     end
 
     s.swift_version = "5.0"
